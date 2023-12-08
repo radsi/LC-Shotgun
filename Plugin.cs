@@ -38,15 +38,7 @@ namespace Gun
             Items.RegisterShopItem(shotgunItem, 0);
             LethalLib.Modules.NetworkPrefabs.RegisterNetworkPrefab(shotgunItem.spawnPrefab);
 
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            if (Utils.Main.IsIngame())
-            {
-                LC_API.ServerAPI.ModdedServer.SetServerModdedOnly();
-            }
+            LC_API.ServerAPI.ModdedServer.SetServerModdedOnly();
         }
     }
 
